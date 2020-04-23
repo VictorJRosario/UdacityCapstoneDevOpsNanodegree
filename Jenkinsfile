@@ -28,7 +28,7 @@ pipeline {
 			steps {
 				withAWS(region:'us-east-1', credentials:'AWSCreds') {
 					sh '''
-						aws eks --region us-east-1 update-kubeconfig --name UdacityCapstoneCluster
+						/var/lib/jenkins/.local/bin/aws eks --region us-east-1 update-kubeconfig --name UdacityCapstoneCluster
 					'''
 				}
 			}
