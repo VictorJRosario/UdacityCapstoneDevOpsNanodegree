@@ -22,7 +22,7 @@
              "containers":[
                 {
                    "name":"green",
-                   "image":"victorrosario/UdacityCapstone",
+                   "image":"victorrosario/udacitycapstone",
                    "ports":[
                       {
                          "name":"http-server",
