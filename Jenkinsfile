@@ -8,7 +8,7 @@ pipeline {
 					sh '''
 						eksctl create cluster \
 						--name UdacityCapstoneCluster \
-						--version 1.13 \
+						--version 1.14 \
 						--nodegroup-name standard-workers \
 						--node-type t2.small \
 						--nodes 2 \
@@ -75,7 +75,7 @@ pipeline {
 			steps {
 				withAWS(region:'us-east-1', credentials:'AWSCreds') {
 					sh '''
-						kubectl apply -f ./BlueController.json
+						/usr/bin/kubectl apply -f ./BlueController.json
 					'''
 				}
 			}
@@ -85,7 +85,7 @@ pipeline {
 			steps {
 				withAWS(region:'us-east-1', credentials:'AWSCreds') {
 					sh '''
-						kubectl apply -f ./GreenController.json
+						/usr/bin/kubectl apply -f ./GreenController.json
 					'''
 				}
 			}
